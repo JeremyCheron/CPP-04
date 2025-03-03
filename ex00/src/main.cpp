@@ -6,7 +6,7 @@
 /*   By: jcheron <jcheron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 11:00:35 by jcheron           #+#    #+#             */
-/*   Updated: 2025/02/24 12:24:12 by jcheron          ###   ########.fr       */
+/*   Updated: 2025/02/27 15:15:41 by jcheron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,48 +18,52 @@
 #include "../includes/WrongDog.hpp"
 #include "../includes/Fox.hpp"
 
+void printDashedLine(int totalWidth)
+{
+	std::cout
+		<< std::setfill('-')
+		<< std::setw(totalWidth)
+		<< std::setfill(' ')
+		<< std::endl;
+}
+
 int main(void)
 {
-	std::cout << "----- Animal -----" << std::endl;
 	Animal *a = new Animal();
-	std::cout << a->getType() << std::endl;
+	a->displayAnimal();
 	a->makeSound();
 	delete a;
 
-	std::cout << "----- Dog -----" << std::endl;
+	printDashedLine(45);
+
 	Animal *d = new Dog();
-	std::cout << d->getType() << std::endl;
+	d->displayAnimal();
 	d->makeSound();
 	delete d;
 
-	std::cout << "----- Cat -----" << std::endl;
 	Animal *c = new Cat();
-	std::cout << c->getType() << std::endl;
+	c->displayAnimal();
 	c->makeSound();
 	delete c;
 
-	std::cout << "----- WrongAnimal -----" << std::endl;
 	WrongAnimal *wa = new WrongAnimal();
-	std::cout << wa->getType() << std::endl;
+	wa->displayAnimal();
 	wa->makeSound();
 	delete wa;
 
-	std::cout << "----- WrongCat -----" << std::endl;
 	WrongAnimal *wc = new WrongCat();
-	std::cout << wc->getType() << std::endl;
+	wc->displayAnimal();
 	wc->makeSound();
 	delete wc;
 
-	std::cout << "----- WrongDog -----" << std::endl;
 	WrongAnimal *wd = new WrongDog();
-	std::cout << wd->getType() << std::endl;
+	wd->displayAnimal();
 	wd->makeSound();
 	delete wd;
 
 	std::cout << "----- Go Wild -----" << std::endl;
-	std::cout << "----- Fox ----" << std::endl;
 	Animal *f = new Fox();
-	std::cout << f->getType() << std::endl;
+	f->displayAnimal();
 	std::cout << "What does the fox say ?" << std::endl;
 	f->makeSound();
 	delete f;
